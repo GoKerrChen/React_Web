@@ -2,6 +2,8 @@ import React from 'react'
 import {Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 import CustomBtn from './CustomBtn'
+import UploadBtn from './UploadBtn'
+import { useReactMediaRecorder } from "react-media-recorder";
 
 const styles = makeStyles({
     wrapper: {
@@ -15,6 +17,8 @@ const styles = makeStyles({
     }
 })
 export default function Grid(props) {
+    const { status, startRecording, stopRecording, mediaBlobUrl } =
+    useReactMediaRecorder({ video: true });
     const {btnTitle} = props;
     const classes = styles(); 
     return (
